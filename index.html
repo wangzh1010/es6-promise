@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript" src="dist/es6-promise.js"></script>
+    <script type="text/javascript">
+    var p = new MyPromise.default((res, rej) => {
+        setTimeout(() => {
+            res(`Promise`)
+        })
+
+    })
+
+    p.then(res => {
+        let div = document.createElement('div');
+        div.innerText = res;
+        document.body.appendChild(div)
+        return { v: '0.0.1' }
+    }, rej => {
+
+    }).then(res => {
+        let div = document.createElement('div');
+        div.innerText = `ver: ${res.v}`;
+        document.body.appendChild(div)
+    })
+    </script>
+</body>
+
+</html>
